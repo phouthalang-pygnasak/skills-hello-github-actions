@@ -4,3 +4,9 @@ on:
     types: [opened]
 permissions:
   pull-requests: write
+
+jobs:
+  build:
+    name: Build the welcome post
+    runs-on: ubuntu-latest
+    
