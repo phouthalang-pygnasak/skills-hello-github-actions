@@ -13,13 +13,6 @@ _Create a GitHub Action and use it in a workflow._
 
 </header>
 
-<!--
-  <<< Author notes: Step 2 >>>
-  Start this step by acknowledging the previous step.
-  Define terms and link to docs.github.com.
-  Historic note: The previous course had troubleshooting steps for people not using the GitHub UI.
--->
-
 ## Step 2: Add a job to your workflow file
 
 _Nice work! :tada: You added a workflow file!_
@@ -39,6 +32,18 @@ In this step of our exercise, we will add a "build" job. We will specify `ubuntu
 
 ### :keyboard: Activity: Add a job to your workflow file
 
+## Step 3: Add actions to your workflow file
+
+_Nice work adding a job to your workflow! :dancer:_
+
+Workflows have jobs, and jobs have steps. So now we'll add steps to your workflow.
+
+**What are _steps_?**: Actions steps will run during our job in order. Each step is either a shell script that will be executed, or an action that will be run. Each step must pass for the next step to run. Actions steps can be used from within the same repository, from any other public repository, or from a published Docker container image.
+
+In our action, we post a comment on the pull request using a [bash](https://en.wikipedia.org/wiki/Bash_%28Unix_shell%29) script and [GitHub CLI](https://cli.github.com/).
+
+### :keyboard: Activity: Add Actions steps to your workflow file
+
 1. Open your `welcome.yml` file.
 2. Update the contents of the file to:
    ```yaml
@@ -52,6 +57,11 @@ In this step of our exercise, we will add a "build" job. We will specify `ubuntu
      build:
        name: Post welcome comment
        runs-on: ubuntu-latest
+       steps:
+         - run: gh pr comment $PR_URL --body "Welcome to the repository!"
+           env:
+             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+             PR_URL: ${{ github.event.pull_request.html_url }}
    ```
 3. Click **Commit changes...** in the top right of the workflow editor.
 4. Type your commit message and commit your changes directly to your branch.
