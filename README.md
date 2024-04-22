@@ -1,36 +1,10 @@
 <header>
 
-<!--
-  <<< Author notes: Course header >>>
-  Include a 1280x640 image, course title in sentence case, and a concise description in emphasis.
-  In your repository settings: enable template repository, add your 1280x640 social image, auto delete head branches.
-  Add your open source license, GitHub uses MIT license.
--->
-
 # Hello GitHub Actions
 
 _Create a GitHub Action and use it in a workflow._
 
 </header>
-
-## Step 2: Add a job to your workflow file
-
-_Nice work! :tada: You added a workflow file!_
-
-Here's what it means:
-
-- `name: Post welcome comment` gives your workflow a name. This name appears on any pull request or in the Actions tab of your repository.
-- `on: pull_request: types: [opened]` indicates that your workflow will execute anytime a pull request opens in your repository.
-- `permissions` assigns the workflow permissions to operate on the repository
-- `pull-requests: write` gives the workflow permission to write to pull requests. This is needed to create the welcome comment.
-
-Next, we need to specify jobs to run.
-
-**What is a _job_?**: A job is a set of steps in a workflow that execute on the same runner (a runner is a server that runs your workflows when triggered). Workflows have jobs, and jobs have steps. Steps are executed in order and are dependent on each other. We'll add steps in the next step of this exercise. To read more about jobs, see "[Jobs](https://docs.github.com/en/actions/learn-github-actions/understanding-github-actions#jobs)".
-
-In this step of our exercise, we will add a "build" job. We will specify `ubuntu-latest` as the fastest and cheapest job runner available. If you want to read more about why we'll use that runner, see the code explanation for the line `runs-on: ubuntu-latest` in the "[Understanding the workflow file](https://docs.github.com/en/actions/learn-github-actions/understanding-github-actions#understanding-the-workflow-file)" article.
-
-### :keyboard: Activity: Add a job to your workflow file
 
 ## Step 3: Add actions to your workflow file
 
